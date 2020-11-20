@@ -1,4 +1,5 @@
 # kitchendb
+Check out [design doc](./design.md) for more deatils
 
 ### why am I building another database?
 
