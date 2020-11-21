@@ -8,7 +8,10 @@ lets understand this with an example. Lets assume there are two friends `Foo` an
 should deduct 100$ from `Foo`'s account and deposit 100$ to `Bar`'s account. This is how the query would look like.
 ```
 BEGIN TRANSACTION
-subtract 100$ from Foo account;
-Add 100$ to Bar account;
+query-1 -> subtract 100$ from Foo account;
+query-2 -> add 100$ to Bar account;
 END TRANSACTION
 ```
+Lets say, our kitchendb was able to execute query-1 but failed to execute query-2. In that case, the db should revert the changes done by the query-1. 
+
+## implementation details
