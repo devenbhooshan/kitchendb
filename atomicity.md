@@ -15,3 +15,8 @@ END TRANSACTION
 Lets say, our kitchendb was able to execute query-1 but failed to execute query-2. In that case, the db should revert the changes done by the query-1. 
 
 ## implementation details
+
+
+
+## notes
+- https://brandur.org/postgres-atomicity
