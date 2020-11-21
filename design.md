@@ -4,7 +4,7 @@
 - query engine
 - optimizer
 
-## Database guarantees
+## Database transaction guarantees
 
  - atomicity(abortability)
  - snapshot isolation(implementaion same as postgresql)
