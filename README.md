@@ -1,5 +1,5 @@
 # kitchendb
-Check out [design doc](./design.md) for more deatils
+Check out [design doc](./docs/design.md) for more deatils
 
 ### why another database?
 
