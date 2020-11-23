@@ -1,5 +1,8 @@
-.PHONY: build
+.PHONY: build run clean
 build:
-	go build -o build/main src/main.go
+	go build -o build/kitchendb pkg/kitchen/main.go
 run:
-	./build/main
+	./build/kitchendb
+
+clean:
+	rm -r build/*
