@@ -1,7 +1,7 @@
 ## goals
 
 - support postgresl wire protocol
-- support for both OLTP and OLAP workloads
+- support for both OLTP and OLAP(i.e HTAP) workloads
 - sql compatible query language
 - pluggable storage engine
 - acid transactions
@@ -24,3 +24,4 @@
 
 - [cockroachdb design doc](https://github.com/cockroachdb/cockroach/blob/master/docs/design.md)
 - [DB_Engines](https://db-engines.com/en/)
+- https://github.com/alex-dukhno/database
