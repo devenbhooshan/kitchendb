@@ -1,11 +1,12 @@
 ## goals
 
-- supports 
+- support postgresl wire protocol
 - support for both OLTP and OLAP workloads
 - sql compatible query language
 - pluggable storage engine
 - acid transactions
 - easy management api
+
 
 ## Components
 
@@ -19,7 +20,7 @@
   - [benchmarks](https://github.com/brianfrankcooper/YCSB)
 
 
-# links
+## links
 
 - [cockroachdb design doc](https://github.com/cockroachdb/cockroach/blob/master/docs/design.md)
 - [DB_Engines](https://db-engines.com/en/)
