@@ -1,6 +1,6 @@
 # storage engine
 
-the responsibility of storage engine is to manage how data is stored both in disk or memory. There are multiple storage engines available in the market(some are b-tree based and some are lsm tree based) eg:  levelsdb, rocksdb, hyperleveldb, lmdb etc. mongodb uses wiredTiger storage engine. mongodb also supports in-memory storage engines. some of the databases support pluggable storage engine where one can pick the best engine depending on the workloads. instead of defining the storage engine, we will make it pluggable.
+the responsibility of storage engine is to manage how data is stored both in disk or memory. There are multiple storage engines available in the market(some are b-tree based and some are lsm tree based) eg:  levelsdb, rocksdb, hyperleveldb, lmdb etc. mongodb uses wiredTiger storage engine. mongodb also supports in-memory storage engines. some of the databases support pluggable storage engine where one can pick the best engine depending on the workloads. instead of defining the storage engine, kitchendb will make it pluggable.
 
 
 ### links
