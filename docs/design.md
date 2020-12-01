@@ -1,5 +1,6 @@
 ## goals
 
+- supports 
 - support for both OLTP and OLAP workloads
 - sql compatible query language
 - pluggable storage engine
@@ -15,6 +16,7 @@
 - misc
   - telemetry
   - config management
+  - [benchmarks](https://github.com/brianfrankcooper/YCSB)
 
 
 # links
