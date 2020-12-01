@@ -1,3 +1,11 @@
+## goals
+
+- support for both OLTP and OLAP workloads
+- sql compatible query language
+- pluggable storage engine
+- acid transactions
+- easy management api
+
 ## Components
 
 - [networking](./layers/networking/networking.md)
