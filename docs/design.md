@@ -7,7 +7,7 @@
 - acid transactions
 
 
-## Components
+## Database Components
 
 - [networking](./layers/networking/networking.md)
 - [sql layer](./layers/sql-layer/sql.md)
