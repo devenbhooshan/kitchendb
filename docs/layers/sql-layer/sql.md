@@ -7,3 +7,5 @@ this layer would be responsible for parsing and executing the queries. we want o
 - query planner & rewriter
 - executor
 
+### links
+- https://github.com/kyleconroy/sqlc

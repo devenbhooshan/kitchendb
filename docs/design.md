@@ -25,3 +25,7 @@
 - [cockroachdb design doc](https://github.com/cockroachdb/cockroach/blob/master/docs/design.md)
 - [DB_Engines](https://db-engines.com/en/)
 - https://github.com/alex-dukhno/database
+
+
+## distributed sql
+- https://github.com/citusdata/citus
