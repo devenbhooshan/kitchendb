@@ -13,7 +13,6 @@
 - [networking](./layers/networking/networking.md)
 - [sql layer](./layers/sql-layer/sql.md)
 - [transactional layer](./layers/transactional/transaction.md)
-
 - misc
   - telemetry
   - config management
