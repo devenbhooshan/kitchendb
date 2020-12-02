@@ -4,7 +4,7 @@ the responsibility of storage engine is to manage how data is stored both in dis
 
 ### pluggable storage engine
 - we want kitchendb to be extensible in terms of the type of storage engine it supports
-- <Add implementation details>
+- Add implementation details here
 
 ### links
 
