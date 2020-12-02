@@ -1,4 +1,4 @@
-# kitchendb ![kitchendb](https://github.com/devenbhooshan/kitchendb/workflows/kitchendb/badge.svg?branch=master)
+# ![kitchendb](https://github.com/devenbhooshan/kitchendb/workflows/kitchendb/badge.svg?branch=master)
 ![alt text](logo.png "logo")
 
 ## design goals
