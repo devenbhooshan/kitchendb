@@ -1,11 +1,10 @@
 ## goals
 
-- support postgresl wire protocol
+- support postgresql wire protocol
 - support for both OLTP and OLAP(i.e HTAP) workloads
 - sql compatible query language
 - pluggable storage engine
 - acid transactions
-- easy management api
 
 
 ## Components
