@@ -1,6 +1,7 @@
 # sql layer
 
-this layer would be responsible for parsing and executing the queries. we want our database to support sql queries.
+this layer would be responsible for parsing and executing the queries
+
 
 ## components
 - parser
