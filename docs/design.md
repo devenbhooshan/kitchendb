@@ -9,10 +9,11 @@
 
 ## Database Components
 
+- [storage engine](./layers/storage/storage.md)
 - [networking](./layers/networking/networking.md)
 - [sql layer](./layers/sql-layer/sql.md)
 - [transactional layer](./layers/transactional/transaction.md)
-- [storage engine](./layers/storage/storage.md)
+
 - misc
   - telemetry
   - config management
