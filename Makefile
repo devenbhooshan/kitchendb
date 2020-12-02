@@ -7,3 +7,6 @@ clean:
 	rm -r build/*
 test:
 	go test ./...
+
+deps:
+	go get -v -t -d ./...
