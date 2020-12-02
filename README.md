@@ -1,4 +1,13 @@
 # kitchendb ![kitchendb](https://github.com/devenbhooshan/kitchendb/workflows/kitchendb/badge.svg?branch=master)
+
+## design goals
+
+- support postgresql wire protocol
+- support for both OLTP and OLAP(i.e HTAP) workloads
+- sql compatible query language
+- pluggable storage engine
+- acid transactions
+
 Check out [design doc](./docs/design.md) for more deatils
 
 ### why another database?
