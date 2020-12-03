@@ -24,3 +24,9 @@ Check out [design doc](./docs/design.md) for more deatils
 - [ ] telemetry framework
 - [ ] finish the design doc of transactional layer
 - [ ] setup [yahoo cloud service benchmark](https://github.com/brianfrankcooper/YCSB)
+
+### development
+
+- install go(>= 1.15)
+- run `make`
+- run `make test`
