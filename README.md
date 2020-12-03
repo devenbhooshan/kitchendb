@@ -27,6 +27,6 @@ Check out [design doc](./docs/design.md) for more deatils
 
 ### development
 
-- install go(>= 1.15)
+- install go(>= 1.15) and `make`
 - run `make`
 - run `make test`
