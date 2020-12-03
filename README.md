@@ -1,7 +1,7 @@
-# ![kitchendb](https://github.com/devenbhooshan/kitchendb/workflows/kitchendb/badge.svg?branch=master)
+# kitchendb ![kitchendb](https://github.com/devenbhooshan/kitchendb/workflows/kitchendb/badge.svg?branch=master)
 ![alt text](logo.png "logo")
 
-## design goals
+## Design goals
 
 - support postgresql wire protocol
 - support for both OLTP and OLAP(i.e HTAP) workloads
@@ -11,7 +11,7 @@
 
 Check out [design doc](./docs/design.md) for more deatils
 
-### why another database?
+### why?
 
 - to understand and implement internals of a dbms 
 
