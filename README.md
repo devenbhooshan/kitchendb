@@ -20,10 +20,7 @@ Check out [design doc](./docs/design.md) for more deatils
 - [x] write first draft of design doc
 - [x] setup ci
 - [x] import [vitess-sqlparser](https://github.com/blastrain/vitess-sqlparser)
-- [ ] finalise the storage engine
-- [ ] import the storage engine
-- [ ] finalise the telemetry framework
-- [ ] integrate with telemetry framework
+- [ ] storage engine
+- [ ] telemetry framework
 - [ ] finish the design doc of transactional layer
 - [ ] setup [yahoo cloud service benchmark](https://github.com/brianfrankcooper/YCSB)
-- [ ] read about distributed sql
