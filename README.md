@@ -30,3 +30,7 @@ Check out [design doc](./docs/design.md) for more deatils
 - install go(>= 1.15) and `make`
 - run `make`
 - run `make test`
+
+### contribution
+
+- head over to [issues](https://github.com/devenbhooshan/kitchendb/issues) and start contributing
