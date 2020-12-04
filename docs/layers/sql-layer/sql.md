@@ -10,3 +10,4 @@ this layer would be responsible for parsing and executing the queries
 
 ### links
 - https://github.com/kyleconroy/sqlc
+- https://github.com/jaytaylor/sql-layer
