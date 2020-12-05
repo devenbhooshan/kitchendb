@@ -2,6 +2,11 @@
 
 the responsibility of storage engine is to manage how data is stored both in disk or memory. There are multiple storage engines available in the market(some are b-tree based and some are lsm tree based) eg:  levelsdb, rocksdb, hyperleveldb, lmdb etc. mongodb uses wiredTiger storage engine. mongodb also supports in-memory storage engines. some of the databases support pluggable storage engine where one can pick the best engine depending on the workloads. 
 
+### [pebble](https://github.com/cockroachdb/pebble) as the first storage engine, why
+- it is inspired by rocksdb
+- it is written in go(so no interop overheads)
+- it is being used in production in cockroach DB
+
 ### pluggable storage engine
 - we want kitchendb to be extensible in terms of the type of storage engine it supports
 - Add implementation details here
