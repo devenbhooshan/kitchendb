@@ -3,7 +3,7 @@ package server
 import (
 	"reflect"
 
-	"github.com/devenbhooshan/kitchendb/pkg/parser"
+	"github.com/devenbhooshan/kitchendb/pkg/sql/parser"
 )
 
 func Responder(stm string) ([]byte, error) {

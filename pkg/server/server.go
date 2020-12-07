@@ -41,7 +41,7 @@ func (p *PgFortuneBackend) Run() error {
 
 		switch msg.(type) {
 		case *pgproto3.Query:
-			response, err := p.responder("select foo from bar;")
+			response, err := p.responder((msg.(*pgproto3.Query)).String)
 			if err != nil {
 				return fmt.Errorf("error generating query response: %w", err)
 			}
