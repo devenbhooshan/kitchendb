@@ -10,10 +10,10 @@ import (
 type PgFortuneBackend struct {
 	backend   *pgproto3.Backend
 	conn      net.Conn
-	responder func() ([]byte, error)
+	responder func(string) ([]byte, error)
 }
 
-func NewPgFortuneBackend(conn net.Conn, responder func() ([]byte, error)) *PgFortuneBackend {
+func NewPgFortuneBackend(conn net.Conn, responder func(string) ([]byte, error)) *PgFortuneBackend {
 	backend := pgproto3.NewBackend(pgproto3.NewChunkReader(conn), conn)
 
 	connHandler := &PgFortuneBackend{
@@ -41,7 +41,7 @@ func (p *PgFortuneBackend) Run() error {
 
 		switch msg.(type) {
 		case *pgproto3.Query:
-			response, err := p.responder()
+			response, err := p.responder("select foo from bar;")
 			if err != nil {
 				return fmt.Errorf("error generating query response: %w", err)
 			}

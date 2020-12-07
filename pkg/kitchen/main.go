@@ -6,7 +6,7 @@ import (
 	"log"
 	"net"
 	"os"
-	"os/exec"
+
 	"github.com/devenbhooshan/kitchendb/pkg/server"
 )
 
@@ -22,7 +22,6 @@ func main() {
 	}
 
 	flag.StringVar(&options.listenAddress, "listen", "127.0.0.1:15432", "Listen address")
-	flag.StringVar(&options.responseCommand, "response-command", "echo hello", "Command to execute to generate query response")
 	flag.Parse()
 
 	ln, err := net.Listen("tcp", options.listenAddress)
@@ -38,9 +37,7 @@ func main() {
 		}
 		log.Println("Accepted connection from", conn.RemoteAddr())
 
-		b := server.NewPgFortuneBackend(conn, func() ([]byte, error) {
-			return exec.Command("sh", "-c", options.responseCommand).CombinedOutput()
-		})
+		b := server.NewPgFortuneBackend(conn, server.Responder)
 		go func() {
 			err := b.Run()
 			if err != nil {
