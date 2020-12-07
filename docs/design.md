@@ -5,6 +5,7 @@
 - sql compatible query language
 - pluggable storage engine
 - acid transactions
+- replicate data across multiple nodes to provide HA
 
 
 ## Database Components
