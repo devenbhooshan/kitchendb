@@ -4,7 +4,7 @@ build:
 run:
 	./build/kitchendb
 clean:
-	go clean -testcache && rm -r build/*
+	go clean -testcache && rm -rf build/*
 test:
 	go test ./...
 deps:
