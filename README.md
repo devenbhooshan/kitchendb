@@ -8,6 +8,7 @@
 - sql compatible query language
 - pluggable storage engine
 - acid transactions
+- replicate data across multiple nodes to provide HA
 
 Check out [design doc](./docs/design.md) for more deatils
 
