@@ -18,4 +18,5 @@ the responsibility of storage engine is to manage how data is stored both in dis
 - https://wiki.postgresql.org/wiki/Future_of_storage
 - https://israelg99.github.io/2017-06-07-Introduction-to-Database-Storage-Engines/
 - https://blog.yugabyte.com/a-busy-developers-guide-to-database-storage-engines-the-basics/
+- http://www.benstopford.com/2015/02/14/log-structured-merge-trees/
 
