@@ -8,6 +8,7 @@ import (
 	"os"
 
 	"github.com/devenbhooshan/kitchendb/pkg/server"
+	"github.com/devenbhooshan/kitchendb/pkg/sql"
 )
 
 var options struct {
@@ -37,7 +38,7 @@ func main() {
 		}
 		log.Println("Accepted connection from", conn.RemoteAddr())
 
-		b := server.NewPgFortuneBackend(conn, server.Responder)
+		b := server.NewPgFortuneBackend(conn, sql.NewKitchenSQLEngine())
 		go func() {
 			err := b.Run()
 			if err != nil {

@@ -4,22 +4,23 @@ import (
 	"fmt"
 	"net"
 
+	"github.com/devenbhooshan/kitchendb/pkg/sql"
 	"github.com/jackc/pgproto3/v2"
 )
 
 type PgFortuneBackend struct {
 	backend   *pgproto3.Backend
 	conn      net.Conn
-	responder func(string) ([]byte, error)
+	sqlEngine sql.SQLEngine
 }
 
-func NewPgFortuneBackend(conn net.Conn, responder func(string) ([]byte, error)) *PgFortuneBackend {
+func NewPgFortuneBackend(conn net.Conn, sqlEngine sql.SQLEngine) *PgFortuneBackend {
 	backend := pgproto3.NewBackend(pgproto3.NewChunkReader(conn), conn)
 
 	connHandler := &PgFortuneBackend{
 		backend:   backend,
 		conn:      conn,
-		responder: responder,
+		sqlEngine: sqlEngine,
 	}
 
 	return connHandler
@@ -41,7 +42,7 @@ func (p *PgFortuneBackend) Run() error {
 
 		switch msg.(type) {
 		case *pgproto3.Query:
-			response, err := p.responder((msg.(*pgproto3.Query)).String)
+			response, err := p.sqlEngine.Run((msg.(*pgproto3.Query)).String)
 			if err != nil {
 				return fmt.Errorf("error generating query response: %w", err)
 			}
