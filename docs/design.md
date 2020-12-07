@@ -14,7 +14,7 @@
 - [networking](./layers/networking/networking.md)
 - [sql layer](./layers/sql-layer/sql.md)
 - [transactional layer](./layers/transactional/transaction.md)
-- replication layer
+- [replication layer](./layers/replication/replication.md)
 - misc
   - telemetry
   - config management
