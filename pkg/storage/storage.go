@@ -8,8 +8,8 @@ import (
 )
 
 type Store interface {
-	Set(key []byte, value string) error
-	Get(key []byte) (string, error)
+	Set(key []byte, value []byte) error
+	Get(key []byte) ([]byte, error)
 }
 
 type PebbleStore struct {
