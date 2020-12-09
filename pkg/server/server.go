@@ -58,7 +58,7 @@ func (p *PgFortuneBackend) Run() error {
 					Format:               0,
 				},
 			}}).Encode(nil)
-			buf = (&pgproto3.DataRow{Values: [][]byte{response}}).Encode(buf)
+			buf = (&pgproto3.DataRow{Values: response}).Encode(buf)
 			buf = (&pgproto3.CommandComplete{CommandTag: []byte("SELECT 1")}).Encode(buf)
 			buf = (&pgproto3.ReadyForQuery{TxStatus: 'I'}).Encode(buf)
 			_, err = p.conn.Write(buf)

@@ -3,17 +3,17 @@ package sql
 import (
 	"testing"
 
+	"github.com/devenbhooshan/kitchendb/pkg/sql/executor/ddl"
+	"github.com/devenbhooshan/kitchendb/pkg/storage"
 	"github.com/stretchr/testify/assert"
 )
 
-func TestRunForSelectStatement(t *testing.T) {
-	sqlEngine := NewKitchenSQLEngine()
-	out, _ := sqlEngine.Run("select foo from bar;")
-	assert.Equal(t, []byte("*sqlparser.Select"), out)
-}
+func TestRunForCreateTable(t *testing.T) {
+	defer ddl.CleanUp("test-storage")
+	store, _ := storage.NewPebbleStore("test-storage")
 
-func TestRunForInsertStatement(t *testing.T) {
-	sqlEngine := NewKitchenSQLEngine()
-	out, _ := sqlEngine.Run("insert into foo values(1,2);")
-	assert.Equal(t, []byte("*sqlparser.Insert"), out)
+	sqlEngine := NewKitchenSQLEngine(store)
+	out, err := sqlEngine.Run("create table foobar (bar text);")
+	assert.NotNil(t, out)
+	assert.Nil(t, err)
 }

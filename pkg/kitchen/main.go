@@ -9,6 +9,7 @@ import (
 
 	"github.com/devenbhooshan/kitchendb/pkg/server"
 	"github.com/devenbhooshan/kitchendb/pkg/sql"
+	"github.com/devenbhooshan/kitchendb/pkg/storage"
 )
 
 var options struct {
@@ -30,6 +31,10 @@ func main() {
 		log.Fatal(err)
 	}
 	log.Println("Listening on", ln.Addr())
+	store, err := storage.NewPebbleStore("data")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	for {
 		conn, err := ln.Accept()
@@ -38,7 +43,7 @@ func main() {
 		}
 		log.Println("Accepted connection from", conn.RemoteAddr())
 
-		b := server.NewPgFortuneBackend(conn, sql.NewKitchenSQLEngine())
+		b := server.NewPgFortuneBackend(conn, sql.NewKitchenSQLEngine(store))
 		go func() {
 			err := b.Run()
 			if err != nil {

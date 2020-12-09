@@ -10,6 +10,7 @@ import (
 type Store interface {
 	Set(key []byte, value []byte) error
 	Get(key []byte) ([]byte, error)
+	GetWithPrefix(prefix []byte) ([][]byte, error)
 }
 
 type PebbleStore struct {
@@ -57,4 +58,32 @@ func (ps *PebbleStore) Get(key []byte) ([]byte, error) {
 	}
 
 	return value, nil
+}
+
+func (ps *PebbleStore) GetWithPrefix(prefix []byte) ([][]byte, error) {
+	keyUpperBound := func(b []byte) []byte {
+		end := make([]byte, len(b))
+		copy(end, b)
+		for i := len(end) - 1; i >= 0; i-- {
+			end[i] = end[i] + 1
+			if end[i] != 0 {
+				return end[:i+1]
+			}
+		}
+		return nil // no upper-bound
+	}
+
+	prefixIterOptions := func(prefix []byte) *pebble.IterOptions {
+		return &pebble.IterOptions{
+			LowerBound: prefix,
+			UpperBound: keyUpperBound(prefix),
+		}
+	}
+
+	iter := ps.db.NewIter(prefixIterOptions(prefix))
+	data := [][]byte{}
+	for iter.First(); iter.Valid(); iter.Next() {
+		data = append(data, iter.Value())
+	}
+	return data, nil
 }
